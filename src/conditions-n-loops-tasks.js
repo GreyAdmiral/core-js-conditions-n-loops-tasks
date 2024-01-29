@@ -21,8 +21,8 @@
  *  0  => true
  *  -5 => false
  */
-function isPositive(/* number */) {
-   throw new Error('Not implemented');
+function isPositive(number) {
+   return number >= 0;
 }
 
 /**
@@ -38,8 +38,9 @@ function isPositive(/* number */) {
  *  -5, 0, 5      => 5
  *  -0.1, 0, 0.2  => 0.2
  */
-function getMaxNumber(/* a, b, c */) {
-   throw new Error('Not implemented');
+function getMaxNumber(a, b, c) {
+   const temp = a > b ? a : b;
+   return temp > c ? temp : c;
 }
 
 /**
@@ -82,8 +83,36 @@ function canQueenCaptureKing(/* queen, king */) {
  *  2, 2, 5   => false
  *  3, 0, 3   => false
  */
-function isIsoscelesTriangle(/* a, b, c */) {
-   throw new Error('Not implemented');
+function isIsoscelesTriangle(a, b, c) {
+   const isStart =
+      a !== 0 && b !== 0 && c !== 0 && (a === b || b === c || a === c);
+
+   if (isStart) {
+      let one;
+      let two;
+
+      if (a === b) {
+         one = a;
+         two = c;
+      } else if (b === c) {
+         one = b;
+         two = a;
+      } else {
+         one = a;
+         two = b;
+      }
+
+      const med = Math.sqrt(4 * one ** 2 - two ** 2) / 2;
+      const polup = (a + b + c) / 2;
+      const vys =
+         (2 *
+            Math.sqrt(polup * (polup - two) * (polup - one) * (polup - one))) /
+         two;
+
+      return med === vys;
+   }
+
+   return false;
 }
 
 /**
@@ -100,8 +129,31 @@ function isIsoscelesTriangle(/* a, b, c */) {
  *  10  => X
  *  26  => XXVI
  */
-function convertToRomanNumerals(/* num */) {
-   throw new Error('Not implemented');
+function convertToRomanNumerals(num) {
+   const map = new Map([
+      ['XL', 40],
+      ['X', 10],
+      ['IX', 9],
+      ['V', 5],
+      ['IV', 4],
+      ['I', 1],
+   ]);
+   const iterator = map[Symbol.iterator]();
+   const { size } = map;
+   let number = num;
+   let res = '';
+
+   for (let i = 0; i < size; i += 1) {
+      const pair = iterator.next().value;
+      const quant = Math.floor(number / pair[1]);
+      number -= quant * pair[1];
+
+      for (let j = 0; j < quant; j += 1) {
+         res += pair[0];
+      }
+   }
+
+   return res;
 }
 
 /**
