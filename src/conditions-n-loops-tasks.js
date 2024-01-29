@@ -22,7 +22,7 @@
  *  -5 => false
  */
 function isPositive(number) {
-   return number >= 0;
+  return number >= 0;
 }
 
 /**
@@ -39,8 +39,8 @@ function isPositive(number) {
  *  -0.1, 0, 0.2  => 0.2
  */
 function getMaxNumber(a, b, c) {
-   const temp = a > b ? a : b;
-   return temp > c ? temp : c;
+  const temp = a > b ? a : b;
+  return temp > c ? temp : c;
 }
 
 /**
@@ -62,7 +62,7 @@ function getMaxNumber(a, b, c) {
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  */
 function canQueenCaptureKing(/* queen, king */) {
-   throw new Error('Not implemented');
+  throw new Error('Not implemented');
 }
 
 /**
@@ -84,35 +84,34 @@ function canQueenCaptureKing(/* queen, king */) {
  *  3, 0, 3   => false
  */
 function isIsoscelesTriangle(a, b, c) {
-   const isStart =
-      a !== 0 && b !== 0 && c !== 0 && (a === b || b === c || a === c);
+  const isStart =
+    a !== 0 && b !== 0 && c !== 0 && (a === b || b === c || a === c);
 
-   if (isStart) {
-      let one;
-      let two;
+  if (isStart) {
+    let one;
+    let two;
 
-      if (a === b) {
-         one = a;
-         two = c;
-      } else if (b === c) {
-         one = b;
-         two = a;
-      } else {
-         one = a;
-         two = b;
-      }
+    if (a === b) {
+      one = a;
+      two = c;
+    } else if (b === c) {
+      one = b;
+      two = a;
+    } else {
+      one = a;
+      two = b;
+    }
 
-      const med = Math.sqrt(4 * one ** 2 - two ** 2) / 2;
-      const polup = (a + b + c) / 2;
-      const vys =
-         (2 *
-            Math.sqrt(polup * (polup - two) * (polup - one) * (polup - one))) /
-         two;
+    const med = Math.sqrt(4 * one ** 2 - two ** 2) / 2;
+    const polup = (a + b + c) / 2;
+    const vys =
+      (2 * Math.sqrt(polup * (polup - two) * (polup - one) * (polup - one))) /
+      two;
 
-      return med === vys;
-   }
+    return med === vys;
+  }
 
-   return false;
+  return false;
 }
 
 /**
@@ -130,30 +129,30 @@ function isIsoscelesTriangle(a, b, c) {
  *  26  => XXVI
  */
 function convertToRomanNumerals(num) {
-   const map = new Map([
-      ['XL', 40],
-      ['X', 10],
-      ['IX', 9],
-      ['V', 5],
-      ['IV', 4],
-      ['I', 1],
-   ]);
-   const iterator = map[Symbol.iterator]();
-   const { size } = map;
-   let number = num;
-   let res = '';
+  const map = new Map([
+    ['XL', 40],
+    ['X', 10],
+    ['IX', 9],
+    ['V', 5],
+    ['IV', 4],
+    ['I', 1],
+  ]);
+  const iterator = map[Symbol.iterator]();
+  const { size } = map;
+  let number = num;
+  let res = '';
 
-   for (let i = 0; i < size; i += 1) {
-      const pair = iterator.next().value;
-      const quant = Math.floor(number / pair[1]);
-      number -= quant * pair[1];
+  for (let i = 0; i < size; i += 1) {
+    const pair = iterator.next().value;
+    const quant = Math.floor(number / pair[1]);
+    number -= quant * pair[1];
 
-      for (let j = 0; j < quant; j += 1) {
-         res += pair[0];
-      }
-   }
+    for (let j = 0; j < quant; j += 1) {
+      res += pair[0];
+    }
+  }
 
-   return res;
+  return res;
 }
 
 /**
@@ -172,7 +171,7 @@ function convertToRomanNumerals(num) {
  *  '1950.2'  => 'one nine five zero point two'
  */
 function convertNumberToString(/* numberStr */) {
-   throw new Error('Not implemented');
+  throw new Error('Not implemented');
 }
 
 /**
@@ -188,7 +187,7 @@ function convertNumberToString(/* numberStr */) {
  *  'qweqwe'    => false
  */
 function isPalindrome(/* str */) {
-   throw new Error('Not implemented');
+  throw new Error('Not implemented');
 }
 
 /**
@@ -206,7 +205,7 @@ function isPalindrome(/* str */) {
  *  'qwerty', 'p'     => -1
  */
 function getIndexOf(/* str, letter */) {
-   throw new Error('Not implemented');
+  throw new Error('Not implemented');
 }
 
 /**
@@ -225,7 +224,7 @@ function getIndexOf(/* str, letter */) {
  *  12345, 6    => false
  */
 function isContainNumber(/* num, digit */) {
-   throw new Error('Not implemented');
+  throw new Error('Not implemented');
 }
 
 /**
@@ -242,7 +241,7 @@ function isContainNumber(/* num, digit */) {
  *  [1, 2, 3, 4, 5] => -1   => no balance element
  */
 function getBalanceIndex(/* arr */) {
-   throw new Error('Not implemented');
+  throw new Error('Not implemented');
 }
 
 /**
@@ -267,7 +266,7 @@ function getBalanceIndex(/* arr */) {
  *        ]
  */
 function getSpiralMatrix(/* size */) {
-   throw new Error('Not implemented');
+  throw new Error('Not implemented');
 }
 
 /**
@@ -286,7 +285,7 @@ function getSpiralMatrix(/* size */) {
  *  ]                 ]
  */
 function rotateMatrix(/* matrix */) {
-   throw new Error('Not implemented');
+  throw new Error('Not implemented');
 }
 
 /**
@@ -304,7 +303,7 @@ function rotateMatrix(/* matrix */) {
  *  [-2, 9, 5, -3]  => [-3, -2, 5, 9]
  */
 function sortByAsc(/* arr */) {
-   throw new Error('Not implemented');
+  throw new Error('Not implemented');
 }
 
 /**
@@ -325,7 +324,7 @@ function sortByAsc(/* arr */) {
  *  'qwerty', 3 => 'qetwry' => 'qtrewy' => 'qrwtey'
  */
 function shuffleChar(/* str, iterations */) {
-   throw new Error('Not implemented');
+  throw new Error('Not implemented');
 }
 
 /**
@@ -346,23 +345,23 @@ function shuffleChar(/* str, iterations */) {
  * @returns {number} The nearest larger number, or original number if none exists.
  */
 function getNearestBigger(/* number */) {
-   throw new Error('Not implemented');
+  throw new Error('Not implemented');
 }
 
 module.exports = {
-   isPositive,
-   getMaxNumber,
-   canQueenCaptureKing,
-   isIsoscelesTriangle,
-   convertToRomanNumerals,
-   convertNumberToString,
-   isPalindrome,
-   getIndexOf,
-   isContainNumber,
-   getBalanceIndex,
-   getSpiralMatrix,
-   rotateMatrix,
-   sortByAsc,
-   shuffleChar,
-   getNearestBigger,
+  isPositive,
+  getMaxNumber,
+  canQueenCaptureKing,
+  isIsoscelesTriangle,
+  convertToRomanNumerals,
+  convertNumberToString,
+  isPalindrome,
+  getIndexOf,
+  isContainNumber,
+  getBalanceIndex,
+  getSpiralMatrix,
+  rotateMatrix,
+  sortByAsc,
+  shuffleChar,
+  getNearestBigger,
 };
